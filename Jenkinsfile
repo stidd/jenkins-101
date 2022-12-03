@@ -11,28 +11,28 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                // sh '''
-                // cd myapp
-                // pip install -r requirements.txt
-                // '''
+                sh '''
+                cd myapp
+                pip install -r requirements.txt
+                '''
             }
         }
         stage('Test') {
             steps {
                 echo "Testing.."
-                //sh '''
-                // cd myapp
-                // python3 hello.py
-                // python3 hello.py --name=Brad
-                // '''
+                sh '''
+                cd myapp
+                python3 hello.py
+                python3 hello.py --name=Steve
+                '''
             }
         }
         stage('Deliver') {
             steps {
                 echo 'Deliver....'
-                // sh '''
-                // echo "doing delivery stuff.."
-                // '''
+                sh '''
+                echo "doing delivery stuff.."
+                '''
             }
         }
     }
